@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    /**
+     * Выводит в консоль сумму полученных от пользователя чисел.
+     * @param {number} a - Первое число.
+     * @param {number} b - Второе число.
+    */
+    function sumNam(a, b) {
+      console.log(a + b);
+    }
+
+    /**
+     * Выводит в консоль разность полученных от пользователя чисел.
+     * @param {number} a - Первое число.
+     * @param {number} b - Второе число.
+    */
+    function differNam(a, b) {
+      if (a >= b) {
+        console.log(a - b);
+      } else
+        console.log(b - a);
+    }
+
+    /**
+   * Выводит в консоль результат произведения
+   * полученных от пользователя чисел.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   */
+    function multiplicatNam(a, b) {
+      console.log(a * b);
+    }
+
+    /**
+   * Выводит в консоль результат от деления полученных от пользователя чисел.
+   * @param {number} a - Первое число.
+   * @param {number} b - Второе число.
+   */
+    function divisionNam(a, b) {
+      console.log(a / b);
+    }
+
+    const a = + prompt(`Введите число а:`);
+    const b = + prompt(`Введите число b:`);
+    const operation = prompt(`Введите один символ из: "+", "-", "*", "/":`);
+
+    mathOperation(a, b, operation);
+
+    /**
+    * Запускает функцию в зависимости от введённого значения в переменную operation.
+    * @param {number} a - Первое число.
+    * @param {number} b - Второе число.
+    * @param {string} operation - строка, которая содержит один символ из: "+","-", "*", "/".
+    */
+    function mathOperation(a, b, operation) {
+      switch (operation) {
+        case "+":
+          sumNam(a, b);
+          break;
+        case "-":
+          differNam(a, b);
+          break;
+        case "*":
+          multiplicatNam(a, b);
+          break;
+        case "/":
+          divisionNam(a, b);
+          break;
+        default: console.log(NaN);
+          break;
+      }
+    }
+
+  </script>
+</body>
+
+</html>
